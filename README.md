@@ -25,5 +25,6 @@
 
     Database schema defined in schema.sql (in bamazon-customer, hw 12A).
 
-    Because of time constraints, most error checking and validation is not included, in a production environment it would be added.
+    Because of time constraints, most error checking and validation is not included, in a production 
+    environment it would be added.
 
