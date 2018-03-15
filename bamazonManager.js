@@ -74,25 +74,6 @@ function mainMenu() {
     });
 }
 
-/* function viewProducts() {
-    var id = "";
-    var product = "";
-    var price = "";
-    connection.query("SELECT * FROM products", function (err, res) {
-      if (err) throw err;
-  
-      console.log("Items for sale".padStart(43));
-      console.log("-------------- ".padStart(44));
-      console.log("    id   |     product    |    department    |    price   |    quantity  ");
-      for (var i = 0; i < res.length; i++) {
-        id = res[i].item_id.toString();
-        console.log(id.padStart(5), res[i].product_name.padStart(16), res[i].department_name.padStart(18),res[i].price.toFixed(2).padStart(13), res[i].stock_quantity.toString().padStart(15));
-      }
-        console.log();
-        mainMenu();
-    });
-} 
- */
 function viewProducts() {
 
     connection.query("SELECT * FROM products", function (err, res) {
@@ -151,6 +132,10 @@ function addInv() {
           }
         }
       ]).then(function (answer) {
+      // At the moment this code replaces, rather than increments the quantity.
+      // The requirements were not that clear, time permitting it will be changed
+      // to increment by the amount entered.
+
         console.log("Entered id = " + answer.id + ",  quantity = " + answer.quantity + "\n");
         var query = "UPDATE products SET stock_quantity = ? WHERE item_id = ?";
         connection.query(query, [answer.quantity,answer.id], function (err, res) {
