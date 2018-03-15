@@ -27,4 +27,5 @@
 
     Because of time constraints, most error checking and validation is not included, in a production 
     environment it would be added.
-
+	
+    Screenshot of output included in .png file.
